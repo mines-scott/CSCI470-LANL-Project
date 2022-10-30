@@ -1,0 +1,5 @@
+.DS_Store
+Scott_Initial_Models/data
+Scott_Initial_Models/pickle.txt
+Scott_Initial_Models/__pycache__
+Scott_Initial_Models/.venv
