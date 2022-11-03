@@ -21,3 +21,11 @@ Two decimal points only
 
 Summary stats and more percentiles (10th, 20th, 30th, etc, or even more granular)
 Sorted features for 1-1
+
+layers = [
+          Dense(100, input_shape = (5,), activation = 'tanh'), Dropout(0.1),
+          Dense(100, activation = 'relu'), Dropout(0.1),
+          Dense(100, activation = 'tanh'), Dense(1, activation = 'relu')
+          ]
+
+Remove standard deviations less than

@@ -48,16 +48,16 @@ else:
 x_train, x_test, y_train, y_test = train_test_split(features, labels, test_size=0.2, random_state=0)
 
 layers = [
-          Dense(100, input_shape = (5,), activation = 'relu'), Dropout(0.05),
-          Dense(100, activation = 'tanh'), Dropout(0.05),
-          Dense(100, activation = 'relu'), Dense(1, activation = 'tanh')
+          Dense(10, input_shape = (5,), activation = 'tanh'), Dropout(0.1),
+          Dense(10, activation = 'relu'), Dropout(0.1),
+          Dense(10, activation = 'tanh'), Dense(1, activation = 'relu')
           ]
 model = Sequential(layers)
 
-optimizer = Adam(learning_rate=1e-7)
+optimizer = Adam(learning_rate=1e-5)
 model.compile(optimizer=optimizer, loss='mae', metrics=['mae', "mse"])
-n_epochs = 100
-history = model.fit(x_train, y_train, batch_size=1000, epochs=n_epochs, verbose=1)
+n_epochs = 300
+history = model.fit(x_train, y_train, batch_size=32, epochs=n_epochs, verbose=1)
 
 print(model.evaluate(x_test, y_test))
 
